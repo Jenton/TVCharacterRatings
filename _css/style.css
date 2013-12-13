@@ -1,0 +1,381 @@
+@import url(https://fonts.googleapis.com/css?family=Arimo:400,700);
+@import url(http://fonts.googleapis.com/css?family=Rationale|Press+Start+2P|Iceberg);
+
+/*
+@font-face {
+    font-family: '8bit_wondernominal';
+    src: url('../_fonts/8-bit_wonder-webfont.eot');
+    src: url('../_fonts/8-bit_wonder-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../_fonts/8-bit_wonder-webfont.woff') format('woff'),
+         url('../_fonts/8-bit_wonder-webfont.ttf') format('truetype'),
+         url('../_fonts/8-bit_wonder-webfont.svg#8bit_wondernominal') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'frucade';
+    src: url('../_fonts/frucade.eot');
+    src: url('../_fonts/frucade.eot?#iefix') format('embedded-opentype'),
+         url('../_fonts/frucade.woff') format('woff'),
+         url('../_fonts/frucade.ttf') format('truetype'),
+         url('../_fonts/frucade.svg#frucade') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+*/
+
+/****** Colours ******
+  facebook blue: #425699; 66,86,153
+  light blue: B1C0E0 177,192,224
+  pink: F92770 249, 39, 112
+  grey: #333
+*/
+
+/******* General ********/
+
+html {
+  background-color: #222;
+  background-image: url(../_img/diagmonds.png);
+}
+
+body {
+  background-color: rgba(255,255,255,.075);
+}
+
+body, p {
+  color: #B1C0E0;
+  font-family: "Arimo", "Arial", sans-serif;
+}
+
+a,h1,h2,h3,h4,h5,h6,th {
+ color: #F92770;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+.hidden {
+  display: none;
+}
+
+input[type="button"] {
+  padding: 10px;
+  background-color: rgba(102,102,102,.5);
+  border: none;
+  border-radius: 3px;
+  color: #B1C0E0;
+  min-width: 125px;
+  margin-bottom: 5px;
+}
+
+input[type="button"]:disabled {
+  opacity: 0.5;
+  filter:alpha(opacity=50)
+}
+
+li {
+  list-style-type: circle;
+}
+
+table {
+  margin-bottom: 20px;
+}
+
+.clearfix:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+/******* Basic Sections *********/
+#header, #footer, #main {
+  padding: 1em;
+}
+
+#header, #footer {
+  text-align: center;
+/*  background-color: #3B5998;
+  color: #DAE5CD;*/
+}
+
+#header {
+  padding: 0;
+  padding-top: 20px;
+  
+}
+
+#footer {
+  /*width: 100%;*/
+  margin: 0;
+  margin-top: 15px;
+  background-color: rgba(249, 39, 112, 0.25);
+}
+
+.content {
+  width: 1005px;
+  margin: auto auto;
+}
+
+#main {
+  padding-top: 0;
+}
+
+#status {
+  margin: 0 auto;
+  padding: 15px;
+  text-align: center;
+
+  /*background-color: rgba(100,100,100,0.5);*/
+  border-radius: 5px;
+}
+
+#status input[type="button"] {
+  /*background: none;*/
+}
+
+#share input[type="button"] {
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: .75em;
+}
+
+
+/********* Questions ***********/
+#goBtnDiv, #loginBtnDiv {
+  text-align: center;
+  position: relative;
+}
+
+img#loader {
+  position: absolute;
+  margin-left: 10px;
+}
+
+#score_board p, #lives p {
+  color: #F92770;
+  text-align: right;
+}
+
+.life {
+  float: right;
+  width: 30px;
+}
+
+#guessNotification {
+  position: absolute;
+  top: 300px;
+  width: 80%;
+  text-align: center;
+  background-color: #eee;
+}
+
+#questions {
+  margin-bottom: 5px;
+}
+
+/******** Friend Grid **********/
+#friends {
+
+}
+
+.photo, .name {
+}
+
+.name {
+  text-align: center;
+}
+
+.friend {
+  width: 130px;
+  height: 140px;
+  padding: 5px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.photo:hover {
+  background-color: rgba(102,102,102,.5);
+}
+
+.photo {
+  height: 100px;
+  width: 100px;
+  margin-left: 15px;
+  overflow: hidden;
+}
+
+.photo img {
+  min-height: 100px;
+  min-width: 100px;
+  display: block;
+}
+
+.photooverlay {
+  position: relative;
+  float: left;
+}
+
+.photooverlay span {
+  background: #c00;
+  display: block;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.photooverlay span.wrongoverlay {
+  position: absolute;
+  opacity: 0.4;
+  visibility: visible;
+}
+
+.wrong {
+  opacity: 0.25;
+}
+
+#target, #share {
+  text-align: center;
+}
+
+#target img {
+  margin: 10px auto;
+}
+
+#error {
+  margin: 13px auto;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  -moz-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+
+#error p {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background: #e6e6e6;
+  padding: 3px;
+  color: #F92770;
+  width: 400px;
+}
+
+#error.show {
+  opacity: 1;
+}
+
+/******** Leaderboards ********/
+td, th {
+  padding-top: 2px;
+  padding-right: 40px;
+  font-size: 0.5em;
+  border-bottom: 1px solid #333;
+  max-width: 130px;
+  vertical-align: bottom;
+}
+
+th:last-of-type, td:last-of-type {
+  padding-right: 0;
+  text-align: right;
+}
+
+td:first-child {
+  padding-right: 7px;
+}
+
+#allTimeSection, #playerTableSection {
+  /*max-width: 45%;*/
+}
+
+#allTimeSection {
+  float: left;
+}
+
+#playerTableSection {
+  float: right;
+}
+
+.leaderboardTable {
+  text-transform: uppercase;
+  font-family: "Press Start 2P", monospace;
+}
+
+.leaderboardRow {
+  /*font-size: 1em;*/
+}
+
+.leaderboardTitle {
+  padding-bottom: 10px;
+}
+
+
+/****** fixes for smaller screen sizes ******/
+
+@media screen and (min-width:100px) and (max-width:1199px) {
+  .friend {
+    width: 115px;
+    height: 130px;
+  }
+
+  .photo {
+    height: 90px;
+    width: 90px;
+  }
+
+  .photo img {
+    min-height: 90px;
+    min-width: 90px;
+  }
+
+  .content {
+    width: 860px;
+  }
+
+  #playerTableSection {
+    padding-left: 0;
+  }
+
+  #playerTableSection, #targetTableSection, #allTimeSection {
+    float: none;
+    margin: auto auto;
+    max-width: 50%;
+    padding-bottom: 25px;
+  }
+
+}
+
+@media screen and (min-width:480px) and (max-width:999px) {
+  .friend {
+    width: 100px;
+    height: 120px;
+  }
+
+  .photo {
+    height: 75px;
+    width: 75px;
+  }
+
+  .photo img {
+    min-height: 75px;
+    min-width: 75px;
+  }
+
+}
+
